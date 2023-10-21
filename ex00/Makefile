@@ -1,12 +1,12 @@
-CC			=	c++
+CXX			=	c++
 CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98
-NAME		=	harl
-SRCS		=	main.cpp Harl.cpp
+NAME		=	fixed
+SRCS		=	main.cpp Fixed.cpp
 OBJS		=	$(SRCS:.cpp=.o)
-HFS			=	Harl.hpp
+HFS			=	Fixed.hpp
 
 %.o			:	%.cpp $(HFS)
-				$(CC) $(CXXFLAGS) -c $< -o $@
+				$(CXX) $(CXXFLAGS) -c $< -o $@
 
 all			:	$(NAME)
 
