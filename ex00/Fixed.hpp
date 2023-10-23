@@ -29,12 +29,12 @@ class   Fixed
 	public:
 
 		Fixed();
+		~Fixed();
 		Fixed(const Fixed &original);
 		Fixed &operator=(const Fixed &original);
-		~Fixed();
 
 		int		getRawBits(void) const;
-		int		setRawBits(int const raw);
+		void	setRawBits(int const raw);
 };
 
 #endif

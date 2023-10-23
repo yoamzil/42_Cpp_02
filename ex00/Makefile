@@ -11,7 +11,7 @@ HFS			=	Fixed.hpp
 all			:	$(NAME)
 
 $(NAME)		:	$(OBJS) $(HFS)
-				$(CC) $(CXXFLAGS) $(OBJS) -o $(NAME)
+				$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean		:
 				rm -f $(OBJS)
