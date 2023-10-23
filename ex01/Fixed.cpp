@@ -40,6 +40,7 @@ Fixed   &Fixed::operator=(const Fixed &original)
     return (*this);
 }
 
+
 Fixed::~Fixed()
 {
     std::cout << "Destructor called" << std::endl;
@@ -63,11 +64,21 @@ Fixed::Fixed(const int nbr)
 
 Fixed::Fixed(const float nbr)
 {
-    NumberValue = nbr * 256;
+    NumberValue = roundf (nbr * 256);
 }
 
 float	Fixed::toFloat(void) const
-{}
+{
+    return ((float)NumberValue / 256);
+}
 
 int		Fixed::toInt(void) const
-{}
+{
+    return (NumberValue / 256);
+}
+
+std::ostream	&operator<<(std::ostream &out, const Fixed &fixed)
+{
+    out << fixed.toFloat();
+    return (out);
+}
