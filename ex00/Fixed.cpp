@@ -13,3 +13,42 @@
 /*		"Y88P"									By: yoamzil <yoamzil@student.1337.ma>     */
 /*																						  */
 /* ************************************************************************************** */
+
+#include "Fixed.hpp"
+
+Fixed::Fixed()
+{
+    std::cout << "Default constructor called" << std::endl;
+    NumberValue = 0;
+}
+
+Fixed::Fixed(const Fixed &original)
+{
+    // NumberValue = original.NumberValue;
+    // fractionalBits = original.fractionalBits;
+    *this = original;
+}
+
+Fixed::~Fixed()
+{
+    std::cout << "Destructor called" << std::endl;
+}
+
+int    Fixed::getRawBits(void) const
+{
+    return (NumberValue);
+}
+
+int     Fixed::setRawBits(int const raw)
+{
+    NumberValue = raw;
+}
+
+Fixed   &Fixed::operator=(const Fixed &original)
+{
+    if (this != &original)
+    {
+        this->NumberValue = original.NumberValue;
+    }
+    return (*this);
+}

@@ -13,3 +13,28 @@
 /*		"Y88P"									By: yoamzil <yoamzil@student.1337.ma>     */
 /*																						  */
 /* ************************************************************************************** */
+
+#ifndef FIXED_HPP
+#define FIXED_HPP
+
+#include <iostream>
+
+class   Fixed
+{
+	private:
+
+		int					NumberValue;
+		static const int	fractionalBits = 8;
+
+	public:
+
+		Fixed();
+		Fixed(const Fixed &original);
+		Fixed &operator=(const Fixed &original);
+		~Fixed();
+
+		int		getRawBits(void) const;
+		int		setRawBits(int const raw);
+};
+
+#endif
