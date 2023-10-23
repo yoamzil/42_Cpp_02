@@ -14,43 +14,38 @@
 /*																						  */
 /* ************************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
-Fixed::Fixed()
+#include <iostream>
+#include <cmath>
+
+class   Fixed
 {
-    NumberValue = 0;
-    std::cout << "Default constructor called" << std::endl;
-}
+	private:
 
-Fixed::Fixed(const Fixed &original)
-{
-    std::cout << "Copy constructor called" << std::endl;
-    *this = original;
-}
+		int					NumberValue;
+		static const int	fractionalBits = 8;
 
-Fixed   &Fixed::operator=(const Fixed &original)
-{
-    std::cout << "Copy assignment operator called" << std::endl;
-    if (this != &original)
-    {
-        this->NumberValue = original.getRawBits();
-    }
-    return (*this);
-}
+	public:
 
-Fixed::~Fixed()
-{
-    std::cout << "Destructor called" << std::endl;
-}
+		// Ex00
+		Fixed();
+		~Fixed();
+		Fixed(const Fixed &original);
+		Fixed	&operator=(const Fixed &original);
 
-int    Fixed::getRawBits(void) const
-{
-    std::cout << "getRawBits member function called" << std::endl;
-    return (NumberValue);
-}
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
 
-void    Fixed::setRawBits(int const raw)
-{
-    NumberValue = raw;
-}
+		// Ex01
+		Fixed(const int nbr);
+		Fixed(const float nbr);
+		
+		float	toFloat(void) const;
+		int		toInt(void) const;
+};
 
+std::ostream	&operator<<(std::ostream &out, const Fixed &fixed);
+
+#endif
