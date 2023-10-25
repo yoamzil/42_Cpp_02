@@ -18,18 +18,47 @@
 
 int main(void)
 {
-    Fixed           a;
-    Fixed const     b(Fixed(5.05f) * Fixed(2));
+    // Fixed           a;
+    // Fixed const     b(Fixed(5.05f) * Fixed(2));
 
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
+    // std::cout << a << std::endl;
+    // std::cout << ++a << std::endl;
+    // std::cout << a << std::endl;
+    // std::cout << a++ << std::endl;
+    // std::cout << a << std::endl;
 
-    std::cout << b << std::endl;
+    // std::cout << b << std::endl;
 
-    std::cout << Fixed::max(a, b) << std::endl;
+    // std::cout << Fixed::max(a, b) << std::endl;
+
+    // --------------------Comparison tests----------------
+    // Fixed a(3.5f);
+    // Fixed b(3.5f);
+
+    // if (a > b)
+    // {
+    //     std::cout << "a is greater than b" << std::endl;
+    // }
+    // else
+    // {
+    //     std::cout << "a is not greater than b" << std::endl;
+    // }
+
+    // --------------------Arithmetic tests----------------
+    // Fixed a(5.05f);
+    // Fixed b(2);
+
+    // Fixed c = (a + b);
+    // std::cout << "a + b = " << c << std::endl;
+
+    // c = a - b;
+    // std::cout << "a - b = " << c << std::endl;
+
+    // c = a * b;
+    // std::cout << "a * b = " << c << std::endl;
+
+    // c = a / b;
+    // std::cout << "a / b = " << c << std::endl;
 
     return (0);
 }

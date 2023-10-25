@@ -74,8 +74,63 @@ int		Fixed::toInt(void) const
     return (NumberValue / 256);
 }
 
+//-----------------Insertion--------------------//
+
 std::ostream	&operator<<(std::ostream &out, const Fixed &fixed)
 {
     out << fixed.toFloat();
     return (out);
+}
+
+//-----------------Comparison--------------------//
+bool	Fixed::operator>(const Fixed &obj) const
+{
+    return (NumberValue > obj.NumberValue);
+}
+
+bool	Fixed::operator<(const Fixed &obj) const
+{
+    return (NumberValue < obj.NumberValue);
+}
+
+bool	Fixed::operator>=(const Fixed &obj) const
+{
+    return (NumberValue >= obj.NumberValue);
+}
+
+bool	Fixed::operator<=(const Fixed &obj) const
+{
+    return (NumberValue <= obj.NumberValue);
+}
+
+bool	Fixed::operator==(const Fixed &obj) const
+{
+    return (NumberValue == obj.NumberValue);
+}
+
+bool	Fixed::operator!=(const Fixed &obj) const
+{
+    return (NumberValue != obj.NumberValue);
+}
+
+//-----------------Arithmetic--------------------//
+
+Fixed	Fixed::operator+(const Fixed &obj) const
+{
+    return ((float)NumberValue/256 + obj.NumberValue/256);
+}
+
+Fixed	Fixed::operator-(const Fixed &obj) const
+{
+    return ((float)NumberValue/256 - obj.NumberValue/256);
+}
+
+Fixed	Fixed::operator*(const Fixed &obj) const
+{
+    return ((float)NumberValue/256 * obj.NumberValue/256);
+}
+
+Fixed	Fixed::operator/(const Fixed &obj) const
+{
+    return ((float)NumberValue / obj.NumberValue);
 }

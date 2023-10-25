@@ -44,6 +44,21 @@ class   Fixed
 		
 		float	toFloat(void) const;
 		int		toInt(void) const;
+
+		// Ex02
+			// Comparison operators:
+			bool	operator>(const Fixed &obj) const;
+			bool	operator<(const Fixed &obj) const;
+			bool	operator>=(const Fixed &obj) const;
+			bool	operator<=(const Fixed &obj) const;
+			bool	operator==(const Fixed &obj) const;
+			bool	operator!=(const Fixed &obj) const;
+
+			// Arithmetic operators
+			Fixed	operator+(const Fixed &obj) const;
+			Fixed	operator-(const Fixed &obj) const;
+			Fixed	operator*(const Fixed &obj) const;
+			Fixed	operator/(const Fixed &obj) const;
 };
 
 std::ostream	&operator<<(std::ostream &out, const Fixed &fixed);
