@@ -29,7 +29,7 @@ int main(void)
 
     std::cout << b << std::endl;
 
-    // std::cout << Fixed::max(a, b) << std::endl;
+    std::cout << Fixed::max(a, b) << std::endl;
 
     // --------------------Comparison tests----------------
     // Fixed a(3.5f);
