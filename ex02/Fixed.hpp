@@ -59,6 +59,15 @@ class   Fixed
 			Fixed	operator-(const Fixed &obj) const;
 			Fixed	operator*(const Fixed &obj) const;
 			Fixed	operator/(const Fixed &obj) const;
+
+			// Increment/Decrement
+				//pre
+				Fixed	&operator++();
+				Fixed	&operator--();
+
+				//post
+				Fixed	operator++(int);
+				Fixed	operator--(int);
 };
 
 std::ostream	&operator<<(std::ostream &out, const Fixed &fixed);

@@ -19,18 +19,18 @@
 Fixed::Fixed()
 {
     NumberValue = 0;
-    std::cout << "Default constructor called" << std::endl;
+    // std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &original)
 {
-    std::cout << "Copy constructor called" << std::endl;
+    // std::cout << "Copy constructor called" << std::endl;
     *this = original;
 }
 
 Fixed   &Fixed::operator=(const Fixed &original)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
+    // std::cout << "Copy assignment operator called" << std::endl;
     if (this != &original)
     {
         this->NumberValue = original.getRawBits();
@@ -40,12 +40,12 @@ Fixed   &Fixed::operator=(const Fixed &original)
 
 Fixed::~Fixed()
 {
-    std::cout << "Destructor called" << std::endl;
+    // std::cout << "Destructor called" << std::endl;
 }
 
 int    Fixed::getRawBits(void) const
 {
-    std::cout << "getRawBits member function called" << std::endl;
+    // std::cout << "getRawBits member function called" << std::endl;
     return (NumberValue);
 }
 
@@ -134,3 +134,36 @@ Fixed	Fixed::operator/(const Fixed &obj) const
 {
     return ((float)NumberValue / obj.NumberValue);
 }
+
+//-----------------Increment/Decrement--------------------//
+
+//pre
+Fixed	&Fixed::operator++()
+{
+    NumberValue++;
+    return (*this);
+}
+
+Fixed	&Fixed::operator--()
+{
+    NumberValue--;
+    return (*this);
+}
+
+//post
+
+Fixed	Fixed::operator++(int)
+{
+    Fixed   tmp(*this);
+    ++(*this);
+    return (tmp);
+}
+
+Fixed	Fixed::operator--(int)
+{
+    Fixed   tmp(*this);
+    --(*this);
+    return (tmp);
+}
+
+//---------------------------------------------------------//
