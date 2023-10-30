@@ -25,7 +25,7 @@ class   Fixed
 	private:
 
 		int					NumberValue;
-		static const int	fractionalBits = 8;
+		static const int	fractionalBits;
 
 	public:
 
