@@ -45,7 +45,7 @@ Fixed::~Fixed()
 
 int    Fixed::getRawBits(void) const
 {
-    std::cout << "getRawBits member function called" << std::endl;
+    // std::cout << "getRawBits member function called" << std::endl;
     return (NumberValue);
 }
 
@@ -56,11 +56,13 @@ void    Fixed::setRawBits(int const raw)
 
 Fixed::Fixed(const int nbr)
 {
+    std::cout << "Int constructor called" << std::endl;
     NumberValue = nbr * 256;
 }
 
 Fixed::Fixed(const float nbr)
 {
+    std::cout << "Float constructor called" << std::endl;
     NumberValue = roundf (nbr * 256);
 }
 
