@@ -16,6 +16,8 @@
 
 #include "Fixed.hpp"
 
+const int	Fixed::fractionalBits = 8;
+
 Fixed::Fixed()
 {
     NumberValue = 0;
